@@ -119,4 +119,11 @@ public class LikeablePersonController {
 
         return rq.redirectWithMsg("/usr/likeablePerson/list", rsData);
     }
+
+    @PreAuthorize("isAuthenticated()")
+    @GetMapping("/toList")
+    @ResponseBody
+    public String showToList(Model model) {
+        return "usr/likeablePerson/toList";
+    }
 }
